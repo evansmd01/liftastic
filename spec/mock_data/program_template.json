@@ -1,0 +1,113 @@
+{
+  "id": 1,
+  "trainingDays": [
+    {
+      "exercisePrescriptions": [
+        {
+          "exerciseId": 1,
+          "weekPrescriptions": [
+            {
+              "description": null,
+              "buildOnWeek": null,
+              "setPrescriptions": [
+                {
+                  "reps": 3,
+                  "intensityPrescription": {
+                    "percent": 90
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "percent": 80
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "percent": 80
+                  }
+                }
+              ]
+            },
+            null,
+            {
+              "description": null,
+              "buildOnWeek": 1,
+              "setPrescriptions": [
+                {
+                  "reps": 3,
+                  "intensityPrescription": {
+                    "increase": 5
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "increase": 5
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "increase": 5
+                  }
+                }
+              ]
+            },
+            null,
+            {
+              "description": "deload",
+              "buildOnWeek": null,
+              "setPrescriptions": [
+                {
+                  "reps": 3,
+                  "intensityPrescription": {
+                    "percent": 80
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "percent": 70
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "percent": 70
+                  }
+                }
+              ]
+            },
+            null,
+            {
+              "description": null,
+              "buildOnWeek": 3,
+              "setPrescriptions": [
+                {
+                  "reps": 3,
+                  "intensityPrescription": {
+                    "increase": 5
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "increase": 5
+                  }
+                },
+                {
+                  "reps": 5,
+                  "intensityPrescription": {
+                    "increase": 5
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

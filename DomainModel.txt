@@ -1,0 +1,43 @@
+LIFTASTIC
+
+Prescriptions
+WM = working max = 1 rep max at time of first week
+intensity(p) = percentage p of WM
+Inc(n, i) = W(n) ? W(n) + i : use W(n)’s prescription
+
+example
+W1: intensity(70)
+W2: Increase(1, intensity(5)) 		# W1 ? W1 + 5 : W1
+W3: Increase(2, intensity(5))		# W2 ? W2 + 5 : W2
+W4: Repeat(1)					    # W1
+W5: Increase(3, intensity(5)) 		# W3 ? W3 + 5 : W3
+W6: Increase(5, intensity(5))		# W5 ? W5 + 5 : W5
+
+
+Set progression templates
+S1: { reps: 3, weight: Increase(W1) }
+S2: { reps: 5, weight: S1 - 10% }
+S3: { reps: 5, weight: S2 }
+
+
+Combined progression template
+
+Day 1
+
+Snatch
+ 			S1 (2 reps)			S2 (1 reps)		S3 (1 reps)
+W1			70% WM				60% WM			60% WM
+W2			Inc(W1, 5% SM)		Inc(W1, 5% SM)	Inc(W1, 5% SM)
+W3			Inc(W2, 5% SM)		Inc(W2, 5% SM)	Inc(W2, 5% SM)
+W4 (deload)	70% WM				60% WM			60% WM
+W5			Inc(W3, 5% SM)		Inc(W3, 5% SM)	Inc(W3, 5% SM)
+W6			Inc(W5, 5% SM)		Inc(W5, 5% SM)	Inc(W5, 5% SM)
+
+Back Squat
+ 			S1 (8 reps)			S2 (12 reps)		S3 (20 reps)
+W1			70% WM				60% WM			50% WM
+W2			Inc(W1, 5% SM)		Inc(W1, 5% SM)	Inc(W1, 5% SM)
+W3			Inc(W2, 5% SM)		Inc(W2, 5% SM)	Inc(W2, 5% SM)
+W4 (deload)	70% WM				60% WM			50% WM
+W5			Inc(W3, 5% SM)		Inc(W3, 5% SM)	Inc(W3, 5% SM)
+W6			Inc(W5, 5% SM)		Inc(W5, 5% SM)	Inc(W5, 5% SM)
