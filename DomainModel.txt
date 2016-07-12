@@ -41,3 +41,6 @@ W3			Inc(W2, 5% SM)		Inc(W2, 5% SM)	Inc(W2, 5% SM)
 W4 (deload)	70% WM				60% WM			50% WM
 W5			Inc(W3, 5% SM)		Inc(W3, 5% SM)	Inc(W3, 5% SM)
 W6			Inc(W5, 5% SM)		Inc(W5, 5% SM)	Inc(W5, 5% SM)
+
+
+TODO: What about supersets and circuits???

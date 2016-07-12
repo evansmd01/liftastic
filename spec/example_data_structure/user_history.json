@@ -1,0 +1,26 @@
+[
+  {
+    "exerciseId": 1,
+    "units": "kg",
+    "completedOn": "20160709",
+    "basedOn": {
+      "templateId": 1,
+      "day": 1,
+      "week": 1
+    },
+    "sets": [
+      {
+        "actualReps": 2,
+        "actualWeight": 90
+      },
+      {
+        "actualReps": 5,
+        "actualWeight": 80
+      },
+      {
+        "actualReps": 5,
+        "actualWeight": 80
+      }
+    ]
+  }
+]
