@@ -6,10 +6,10 @@ module Domain
       include Virtus.model
 
       attribute :template_id, String
-      attribute :complex, Integer
-      attribute :exercise, Integer
-      attribute :day, Integer
-      attribute :week, Integer
+      attribute :complex_number, Integer
+      attribute :exercise_number, Integer
+      attribute :day_number, Integer
+      attribute :week_number, Integer
     end
 
     class SetHistory
