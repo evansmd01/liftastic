@@ -2,18 +2,11 @@ require 'virtus'
 
 module Domain
   module Entities
-    class IntensityPrescription
-      include Virtus.model
-
-      attribute :percent, Float
-      attribute :increase, Float
-    end
-
     class SetPrescription
       include Virtus.model
 
       attribute :reps, Integer
-      attribute :intensity, IntensityPrescription
+      attribute :intensity, Float
     end
 
     class WeekPrescription
@@ -31,10 +24,9 @@ module Domain
       attribute :weeks, Array[WeekPrescription]
     end
 
-    class ComplexPrescription
+    class PrescriptionGroup
       include Virtus.model
 
-      attribute :description, String
       attribute :exercises, Array[ExercisePrescription]
     end
 
@@ -42,7 +34,7 @@ module Domain
       include Virtus.model
 
       attribute :description, String
-      attribute :complexes, Array[ComplexPrescription]
+      attribute :groups, Array[PrescriptionGroup]
     end
 
     class TrainingProgram

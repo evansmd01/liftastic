@@ -8,7 +8,7 @@ describe Domain::Entities::TrainingProgram do
     Domain::Entities::TrainingProgram.new(id: "1", days: [
         {
             description: "Max Effort",
-            complexes: [
+            prescriptions: [
                 {
                     exercises: [
                         {
@@ -97,12 +97,14 @@ describe Domain::Entities::TrainingProgram do
   context "with no user history" do
 
     it "calculates exercise prescriptions for week 1 day 1" do
-binding.pry
-      expect(program).to_not eq(nil)
+
+
+
+      expect(true).to eq(false)
     end
 
     it "outputs intensity descriptions if working max is 0" do
-
+      expect(true).to eq(false)
     end
 
   end

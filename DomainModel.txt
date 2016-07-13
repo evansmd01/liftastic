@@ -1,37 +1,48 @@
 LIFTASTIC
 
+Problems
+    for a single exercise on a single training day
+        Week 1 - use 80% of 1RM
+        Week 2 - increase by 5% (unless you didn't finish week 1)
+        Week 3 - deload week, use 70% of 1RM
+        Week 4 - back to increase by 5%, but increase based on week 2, not previous week
+    Additional considerations
+        - If you skip a week (or fail to complete it), the next week should use the previous weeks prescription
+            - unless the skipped week was a deload
+        - If you skip part of an day, like you completed 1st exercise, but not second
+            - next week should increase the 1st exercise
+            - but use previous weeks prescription for second exercise
+                - unless it was a deload
+        - Supersets (2 or more exercises with alternating sets)
+        - Alternating weeks
+            - Example
+                Week 1 - Squat
+                Week 2 - Deadlift
+                Week 3 - Squat (increase week 1)
+                Week 4 - Deadlift (increase week2)
+        - Training phases
+            - Example
+                Week 1 - Squats     Bench
+                Week 1 - Squats     Bench
+                Week 1 - Squats     Overhead Press
+                Week 1 - Squats     Overhead Press
+
+
+
 Prescriptions
 WM = working max = 1 rep max at time of first week
 intensity(p) = percentage p of WM
 Inc(n, i) = W(n) ? W(n) + i : use W(n)’s prescription
 
 example
-W1: intensity(70)
-W2: Increase(1, intensity(5)) 		# W1 ? W1 + 5 : W1
-W3: Increase(2, intensity(5))		# W2 ? W2 + 5 : W2
-W4: Repeat(1)					    # W1
-W5: Increase(3, intensity(5)) 		# W3 ? W3 + 5 : W3
-W6: Increase(5, intensity(5))		# W5 ? W5 + 5 : W5
-
-
-Set progression templates
-S1: { reps: 3, weight: Increase(W1) }
-S2: { reps: 5, weight: S1 - 10% }
-S3: { reps: 5, weight: S2 }
-
-
-Combined progression template
+W1: 70%
+W2: W1 ? W1 + 5 : W1
+W3: W2 ? W2 + 5 : W2
+W4: 60%
+W5: W3 ? W3 + 5 : W3
+W6: W5 ? W5 + 5 : W5
 
 Day 1
-
-Snatch
- 			S1 (2 reps)			S2 (1 reps)		S3 (1 reps)
-W1			70% WM				60% WM			60% WM
-W2			Inc(W1, 5% SM)		Inc(W1, 5% SM)	Inc(W1, 5% SM)
-W3			Inc(W2, 5% SM)		Inc(W2, 5% SM)	Inc(W2, 5% SM)
-W4 (deload)	70% WM				60% WM			60% WM
-W5			Inc(W3, 5% SM)		Inc(W3, 5% SM)	Inc(W3, 5% SM)
-W6			Inc(W5, 5% SM)		Inc(W5, 5% SM)	Inc(W5, 5% SM)
 
 Back Squat
  			S1 (8 reps)			S2 (12 reps)		S3 (20 reps)
@@ -43,4 +54,78 @@ W5			Inc(W3, 5% SM)		Inc(W3, 5% SM)	Inc(W3, 5% SM)
 W6			Inc(W5, 5% SM)		Inc(W5, 5% SM)	Inc(W5, 5% SM)
 
 
-TODO: What about supersets and circuits???
+Domain model structure
+
+Training Program
+    Training Day 1 ...
+    Training Day 2 ...
+    Training Day 3
+        desc "max effort"
+        prescription group 1
+            exercise prescription ...
+        prescription group 2 ...
+            description "superset"
+            exercise prescription 1 ...
+            exercise prescription 2
+                exercise id "squats"
+                week prescription 1
+                    set prescription 1 ...
+                        intensity 90%
+                        reps 3
+                    set prescription 2 ...
+                        intensity 70%
+                        reps 6
+                week prescription 2
+                    based on week 1
+                    set prescription 1 ...
+                        intensity +5%
+                        reps 3
+                    set prescription 2 ...
+                        intensity +5%
+                        reps 6
+                week prescription 3
+                    description "deload"
+                    base on week nil
+                    set prescription 1 ...
+                        intensity 70%
+                        reps 3
+                    set prescription 2 ...
+                        intensity 50%
+                        reps 6
+                week prescription 4
+                    based on week 2
+                    set prescription 1 ...
+                        intensity +5%
+                        reps 3
+                    set prescription 2 ...
+                        intensity +5%
+                        reps 6
+
+Training History
+    user
+    exercise
+    units
+    date
+    prescription identifier
+        program id
+        day index
+        group index
+        exercise index
+        week index
+    sets
+        set 1 ...
+        set 2
+            reps 3
+            weight 100
+    completed as prescribed?
+
+Training Session
+    session group 1 ...
+    session group 2
+        exercise 1 ...
+        exercise 2
+            exercise "squat"
+            set 1 ...
+            set 2
+                reps 3
+                weight 100
