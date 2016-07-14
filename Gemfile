@@ -49,4 +49,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'virtus'
 gem 'rspec'
+gem 'rspec-mocks'
 gem 'pry'
+gem 'factory_girl'

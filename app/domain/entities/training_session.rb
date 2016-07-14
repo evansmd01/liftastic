@@ -1,4 +1,5 @@
 require 'virtus'
+require_relative 'exercise'
 
 module Domain
   module Entities
@@ -14,6 +15,7 @@ module Domain
       include Virtus.model
 
       attribute :exercise, Exercise
+      attribute :description, String
       attribute :sets, Array[SessionSet]
     end
 

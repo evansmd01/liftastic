@@ -26,6 +26,8 @@ Problems
                 Week 1 - Squats     Bench
                 Week 1 - Squats     Overhead Press
                 Week 1 - Squats     Overhead Press
+        - Increase reps instead of weight
+        - Increase sets instead of weight
 
 
 
@@ -78,10 +80,10 @@ Training Program
                 week prescription 2
                     based on week 1
                     set prescription 1 ...
-                        intensity +5%
+                        intensity 75%
                         reps 3
                     set prescription 2 ...
-                        intensity +5%
+                        intensity 75%
                         reps 6
                 week prescription 3
                     description "deload"
@@ -95,10 +97,10 @@ Training Program
                 week prescription 4
                     based on week 2
                     set prescription 1 ...
-                        intensity +5%
+                        intensity 80%
                         reps 3
                     set prescription 2 ...
-                        intensity +5%
+                        intensity 80%
                         reps 6
 
 Training History
@@ -129,3 +131,4 @@ Training Session
             set 2
                 reps 3
                 weight 100
+
