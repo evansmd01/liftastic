@@ -1,5 +1,5 @@
 require 'virtus'
-require_relative 'prescription_identifier'
+require_relative '../values/prescription_identifier'
 
 module Domain
   module Entities
@@ -16,7 +16,7 @@ module Domain
       attribute :user_id, String
       attribute :exercise_id, String
       attribute :completed_on, Date
-      attribute :prescription, PrescriptionIdentifier
+      attribute :prescription, Domain::Values::PrescriptionIdentifier
       attribute :sets, Array[SetHistory]
       attribute :completed_as_prescribed, Boolean
     end

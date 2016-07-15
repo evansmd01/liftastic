@@ -33,7 +33,7 @@ FactoryGirl.define do
 
   factory :week_prescription, class: Domain::Entities::WeekPrescription do
 
-    build_on_week nil
+    build_on_week_index nil
     sets { [
         build(:set_prescription, reps: 3, intensity: 90),
         build(:set_prescription, reps: 5, intensity: 80),

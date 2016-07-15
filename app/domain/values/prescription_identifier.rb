@@ -1,7 +1,7 @@
 require 'virtus'
 
 module Domain
-  module Entities
+  module Values
     class PrescriptionIdentifier
       include Virtus.value_object
 

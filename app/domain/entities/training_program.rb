@@ -13,7 +13,7 @@ module Domain
       include Virtus.model
 
       attribute :description, String
-      attribute :build_on_week, Integer
+      attribute :build_on_week_index, Integer
       attribute :sets, Array[SetPrescription]
     end
 

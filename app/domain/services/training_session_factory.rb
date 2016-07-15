@@ -1,5 +1,5 @@
 require_relative '../entities/training_session'
-require_relative '../entities/prescription_identifier'
+require_relative '../values/prescription_identifier'
 
 
 
@@ -36,7 +36,7 @@ module Domain
             session_exercise = Domain::Entities::SessionExercise.new(exercise: exercise, sets: [])
             session_group.exercises << session_exercise
 
-            week_rx = recursively_find_week_rx(user_id, ex_rx, Domain::Entities::PrescriptionIdentifier.new(
+            week_rx = recursively_find_week_rx(user_id, ex_rx, Domain::Values::PrescriptionIdentifier.new(
                                                 program_id: program_id,
                                                 day_index: day_index,
                                                 group_index: group_rx_index,
@@ -62,16 +62,12 @@ module Domain
 
       def recursively_find_week_rx(user_id, ex_rx, rx_id)
         week_rx = ex_rx.weeks[rx_id.week_index]
-        return week_rx if week_rx.build_on_week.nil?
+        return week_rx if week_rx.build_on_week_index.nil?
 
+        rx_id = rx_id.copy(week_index: week_rx.build_on_week_index)
         history = @history_repository.get(user_id, rx_id)
         return week_rx unless history.nil? || !history.completed_as_prescribed
 
-        # the user didn't finish the week that this week was supposed to build upon,
-        # so they should repeat the incomplete week's prescription
-
-        rx_id = rx_id.copy(week_index: week_rx.build_on_week)
-        
         recursively_find_week_rx(user_id, ex_rx, rx_id)
       end
 
