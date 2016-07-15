@@ -34,8 +34,6 @@
 ```
 Prescriptions
 WM = working max = 1 rep max at time of first week
-intensity(p) = percentage p of WM
-Inc(n, i) = W(n) ? W(n) + i : use W(n)’s prescription
 
 example
 W1: 70%
@@ -53,7 +51,7 @@ W2	if W1?  3 reps @ 75% WM     5 reps @ 60% WM
 W3	if W2?  3 reps @ 80% WM     5 reps @ 65% WM     8 reps @ 50% WM
 W4              3 reps @ 60% WM				
 W5	if W3?  3 reps @ 85% WM     5 reps @ 70% WM     8 reps @ 55% WM
-W6	if W5?  3 reps @ 90% WM     5 reps @ 75% WM     8 reps @ 60% WM 
+W6	if W5?  5 reps @ 85% WM     8 reps @ 70% WM     12 reps @ 55% WM 
 ```
 
 ## Domain Aggregate Roots
