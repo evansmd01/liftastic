@@ -1,4 +1,6 @@
 require 'virtus'
+require_relative 'domain_aggregate'
+
 
 module Domain
   module Entities
@@ -37,10 +39,11 @@ module Domain
       attribute :groups, Array[PrescriptionGroup]
     end
 
-    class TrainingProgram
+    class TrainingProgram < DomainAggregate
       include Virtus.model
 
       attribute :id, String
+      attribute :name, String
       attribute :days, Array[TrainingDay]
     end
   end

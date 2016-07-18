@@ -3,8 +3,7 @@ require_relative '../../app/domain/entities/training_program'
 
 FactoryGirl.define do
   factory :training_program, class: Domain::Entities::TrainingProgram do
-
-    id "1"
+    name "dummy training program"
     days { [
         build(:training_day, description: "Day 1")
     ]}

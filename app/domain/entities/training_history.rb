@@ -10,7 +10,7 @@ module Domain
       attribute :weight, Float
     end
 
-    class TrainingHistory
+    class TrainingHistory < DomainAggregate
       include Virtus.model
 
       attribute :user_id, String

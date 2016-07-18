@@ -13,5 +13,6 @@ module Liftastic
     # -- all .rb files in that directory are automatically loaded.
 
     config.autoload_paths << Rails.root.join('app', 'domain', 'entities')
+    config.autoload_paths << Rails.root.join('app', 'models', 'repositories')
   end
 end
